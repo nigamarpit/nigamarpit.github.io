@@ -16,8 +16,7 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -36,7 +35,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="word-wrap:break-word;font-family: 'Roboto', sans-serif;">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -75,7 +74,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Hello World! <br/>I'm Arpit</h1>
+                <h1 id="homeHeading" style="word-wrap:break-word;font-family: 'Roboto', sans-serif;">Hello World! <br/>I'm Arpit</h1>
                 <hr>
                 <p></p>
                 <a href="#academics" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
@@ -90,25 +89,28 @@
                     <h2 class="section-heading" style="color:white">Academic Summary</h2>
                     <hr class="light">
                     <p class="text-faded">
-                    Master of Science in Computer Science (Data Science) from University of Southern California, Los Angeles. GPA-3.5 (Expected Graduation May 2017)<br/>
-                        <h5 class="section-heading" style="color:white">Coursework and Areas of Interest</h5>
-                    <div class="text-center text-faded">
-                        Algorithms<br/>
-                        Database Systems<br/>
-                        Artifical Intelligence<br/>
-                        Machine Learning<br/>
-                        Natural Language Processing<br/>
-                        Information Integration<br/>
-                        Information Retrival<br/>
-                    </div>
+                    Master of Science in Computer Science (Data Science) from University of Southern California, Los Angeles (Expected Graduation May 2017)<br/>
                     <hr class="light">
-                    <br/>
                     <div class="text-faded">
                     Bachelor of Technology (B.Tech) in Computer Science and Engineering from Uttar Pradesh Technical University, India. GPA-4.0 (Graduated 2012)<br/>
                     </div>
                     <!--Higher Secondary Education (XIIth) from Hindustan Aeronautics Limited School, Lucknow (India) affiliated to CBSE Board, Delhi. (75.8%)<br/>
                     Secondary Education (Xth) from Hindustan Aeronautics Limited School, Lucknow (India) affiliated to CBSE Board, Delhi. (83.33%)<br/>-->
                     </p>
+                    <h5 class="section-heading" style="color:white">Coursework and Areas of Interest</h5>
+                    <div class="row text-center text-faded">
+                        <div class="col-md-6">
+                            Algorithms<br/>
+                            Database Systems<br/>
+                            Artifical Intelligence<br/>
+                            Machine Learning<br/>
+                        </div>
+                        <div class="col-md-6">
+                            Natural Language Processing<br/>
+                            Information Integration<br/>
+                            Information Retrival<br/>
+                        </div>
+                    </div>
                     <a href="#workExp" class="page-scroll btn btn-default btn-xl sr-button">Work Experience</a>
                 </div>
             </div>
@@ -161,96 +163,131 @@
 
     <section class="no-padding" id="projects">
         <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
+            <div class="row no-gutter">
+              <div class="col-lg-4 col-sm-6">
+                  <div class="portfolio-box" >
+                      <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded">
+                                  Natural Language Processing
+                              </div>
+                              <div class="project-name">
+                                  <a href="https://github.com/nigamarpit/NLP-Project" target="_blank" style="text-decoration: none;color: white">Restaurant Genie</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                    <div class="portfolio-box" >
                         <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Machine Learning
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    <a href="https://github.com/nigamarpit/Santander-Customer-Satisfaction" target="_blank" style="text-decoration: none;color: white">Santander Customer Satisfaction</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
+                    <div class="portfolio-box" >
                         <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Spatial Database System
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    <a href="https://github.com/nigamarpit/Spatial-databases-and-small-demo-application" target="_blank" style="text-decoration: none;color: white">National Park Spatial System</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
+                    <div class="portfolio-box" >
                         <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    University of Southern California
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    <a href="http://websites.usc.edu/sa/OISOPT/Home/Index" target="_blank" style="text-decoration: none;color: white">OIS OPT</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
+                    <div class="portfolio-box" >
                         <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    University of Southern California
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    <a href="https://websites.usc.edu/UndergradProgram/NormanToppingDB/" target="_blank" style="text-decoration: none;color: white">Norman Topping</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
+                    <div class="portfolio-box" >
                         <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    University of Southern California
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    <a href="http://websites.usc.edu/StudentRecognition" target="_blank" style="text-decoration: none;color: white">Student Recognition</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="portfolio-box" >
+                        <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Digital Image Processing
+                                </div>
+                                <div class="project-name">
+                                    <a href="https://github.com/nigamarpit/Fingerprint-recognition-system" target="_blank" style="text-decoration: none;color: white">Fingerprint Recognition System</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="portfolio-box" >
+                        <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Information Integration
+                                </div>
+                                <div class="project-name">
+                                    <a href="https://github.com/nigamarpit/IIW" target="_blank" style="text-decoration: none;color: white">Escape Explorer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.youtube.com/embed/c7fdi91qf0w" allowfullscreen></iframe>
+                  </div>
                 </div>
             </div>
         </div>
@@ -270,7 +307,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">
-                    <p>Interested in working with me? That's great! Give us a call or send me an email and I'll get back to you as soon as possible!</p>
+                    <p>Interested in working with me? That's great! Give me a call or send me an email and I'll get back to you as soon as possible!</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center text-primary">
                     <i class="fa fa-phone fa-3x sr-contact"></i>
