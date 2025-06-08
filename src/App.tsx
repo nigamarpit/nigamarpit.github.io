@@ -9,7 +9,7 @@ import {
   HelpPanel,
   Link,
   SideNavigation,
-  SplitPanel,
+  // SplitPanel,
 } from '@cloudscape-design/components';
 import { I18nProvider } from '@cloudscape-design/components/i18n';
 import messages from '@cloudscape-design/components/i18n/messages/all.en';
