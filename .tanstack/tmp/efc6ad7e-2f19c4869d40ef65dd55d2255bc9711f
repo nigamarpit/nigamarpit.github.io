@@ -1,0 +1,54 @@
+import { createFileRoute } from '@tanstack/react-router'
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
+import { Button } from '~/components/ui/button'
+import { getServerTime } from '~/utils/time.functions'
+import { RefreshCw } from 'lucide-react'
+
+export const Route = createFileRoute('/projects')({
+  component: DemoPage,
+  loader: async () => {
+    const timeData = await getServerTime()
+    return { timeData }
+  },
+})
+
+function DemoPage() {
+  const { timeData } = Route.useLoaderData()
+
+  return (
+    <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <h1 className="text-4xl font-bold mb-8">Server Functions Demo</h1>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Server Time</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <p className="text-sm">
+              <span className="font-semibold">Timestamp:</span>{' '}
+              <span className="text-muted-foreground">{timeData.timestamp}</span>
+            </p>
+            <p className="text-sm">
+              <span className="font-semibold">Timezone:</span>{' '}
+              <span className="text-muted-foreground">{timeData.timezone}</span>
+            </p>
+          </div>
+
+          <Button
+            onClick={() => window.location.reload()}
+            variant="outline"
+            size="sm"
+          >
+            <RefreshCw className="mr-2 h-4 w-4" />
+            Refresh
+          </Button>
+
+          <p className="text-sm text-muted-foreground">
+            This data is fetched from a server function that runs only on the server.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}

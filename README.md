@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# Arpit Nigam - Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website showcasing my work as a Software Engineer at Amazon, with 17+ years of experience in building scalable distributed systems and GenAI applications.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I'm passionate about:
+- Building highly scalable distributed systems
+- Exploring GenAI and AI applications
+- AWS technologies and cloud architecture
+- Extracting fun out of everything while being a workaholic
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **TanStack Start** - Full-stack React framework with SSR
+- **React 19** - Latest React
+- **TypeScript** - Type safety
+- **Vite 7** - Fast build tool
+- **Tailwind CSS** - Utility-first CSS
+- **Lucide React** - Icon library
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- ✅ Server-side rendering (SSR)
+- ✅ File-based routing
+- ✅ Type-safe server functions
+- ✅ Responsive design
+- ✅ Clean code architecture
+- ✅ Real LinkedIn & GitHub integration
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Visit http://localhost:3000
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+src/
+├── routes/              # File-based routing
+│   ├── __root.tsx      # Root layout
+│   ├── index.tsx       # Home page
+│   ├── about.tsx       # About page
+│   └── demo.tsx        # Server functions demo
+├── components/
+│   └── ui/             # UI components
+│       ├── button.tsx
+│       └── card.tsx
+├── lib/
+│   └── utils.ts        # Utility functions
+├── styles/
+│   └── globals.css     # Global styles
+└── utils/
+    └── time.functions.ts  # Server functions
+```
+
+## Contact
+
+- **Email**: arpit.nigam@outlook.com
+- **LinkedIn**: [linkedin.com/in/nigamarpit](https://www.linkedin.com/in/nigamarpit/)
+- **GitHub**: [github.com/nigamarpit](https://github.com/nigamarpit)
+
+## License
+
+MIT
