@@ -7,6 +7,8 @@ import {
   Link,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { ThemeProvider } from '~/components/theme-provider'
+import { ThemeToggle } from '~/components/theme-toggle'
 import globalsCss from '~/styles/globals.css?url'
 
 export const Route = createRootRoute({
@@ -20,7 +22,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Portfolio',
+        title: 'Arpit Nigam - Portfolio',
       },
     ],
     links: [{ rel: 'stylesheet', href: globalsCss }],
@@ -30,9 +32,11 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
+    <ThemeProvider>
+      <RootDocument>
+        <Outlet />
+      </RootDocument>
+    </ThemeProvider>
   )
 }
 
@@ -43,29 +47,39 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        <nav className="border-b border-gray-200">
-          <div className="container mx-auto px-4 py-4 flex gap-6">
-            <Link
-              to="/"
-              className="hover:text-slate-900 transition-colors"
-              activeProps={{ className: 'font-semibold text-slate-900' }}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="hover:text-slate-900 transition-colors"
-              activeProps={{ className: 'font-semibold text-slate-900' }}
-            >
-              About
-            </Link>
-            <Link
-              to="/projects"
-              className="hover:text-slate-900 transition-colors"
-              activeProps={{ className: 'font-semibold text-slate-900' }}
-            >
-              Projects
-            </Link>
+        <nav className="border-b border-gray-200/50 dark:border-gray-800/50 glass sticky top-0 z-50">
+          <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="flex gap-8">
+              <Link
+                to="/"
+                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors text-sm font-medium"
+                activeProps={{ className: 'text-black dark:text-white font-semibold' }}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors text-sm font-medium"
+                activeProps={{ className: 'text-black dark:text-white font-semibold' }}
+              >
+                About
+              </Link>
+              <Link
+                to="/projects"
+                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors text-sm font-medium"
+                activeProps={{ className: 'text-black dark:text-white font-semibold' }}
+              >
+                Projects
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors text-sm font-medium"
+                activeProps={{ className: 'text-black dark:text-white font-semibold' }}
+              >
+                Contact
+              </Link>
+            </div>
+            <ThemeToggle />
           </div>
         </nav>
         {children}

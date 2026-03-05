@@ -2,6 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
 import { Button } from '~/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
+import { FadeIn } from '~/components/animations/fade-in'
+import { StaggerContainer, StaggerItem } from '~/components/animations/stagger-container'
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsPage,
@@ -69,59 +71,65 @@ const projects = [
 function ProjectsPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-6xl">
-      <div className="mb-12">
-        <h1 className="text-5xl font-bold mb-4">Projects</h1>
-        <p className="text-xl text-gray-600">
-          A collection of my work in ML, NLP, distributed systems, and more
-        </p>
-      </div>
+      <FadeIn>
+        <div className="mb-12">
+          <h1 className="text-5xl font-bold mb-4 text-gray-900 dark:text-gray-50">Projects</h1>
+          <p className="text-xl text-gray-700 dark:text-gray-300">
+            A collection of my work in ML, NLP, distributed systems, and more
+          </p>
+        </div>
+      </FadeIn>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <Card key={project.title} className="hover:shadow-lg transition-shadow flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-lg">{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1 flex flex-col justify-between">
-              <div>
-                <p className="text-sm text-gray-600 mb-4">{project.details}</p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-gray-100 rounded text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+          <StaggerItem key={project.title}>
+            <Card className="hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+              <CardHeader>
+                <CardTitle className="text-lg">{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{project.details}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-2">
-                {project.period && (
-                  <p className="text-xs text-gray-500">{project.period}</p>
-                )}
-                {project.stars !== undefined && (
-                  <p className="text-xs text-gray-500">
-                    ⭐ {project.stars} stars · 🍴 {project.forks} forks
-                  </p>
-                )}
-              </div>
-            </CardContent>
-          </Card>
+                <div className="space-y-2">
+                  {project.period && (
+                    <p className="text-xs text-gray-500 dark:text-gray-500">{project.period}</p>
+                  )}
+                  {project.stars !== undefined && (
+                    <p className="text-xs text-gray-500 dark:text-gray-500">
+                      ⭐ {project.stars} stars · 🍴 {project.forks} forks
+                    </p>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
 
-      <div className="mt-12 text-center">
-        <Button
-          size="lg"
-          onClick={() => window.open('https://github.com/nigamarpit?tab=repositories', '_blank')}
-        >
-          <Github className="mr-2 h-5 w-5" />
-          View All on GitHub
-          <ExternalLink className="ml-2 h-4 w-4" />
-        </Button>
-      </div>
+      <FadeIn delay={0.3}>
+        <div className="mt-12 text-center">
+          <Button
+            size="lg"
+            onClick={() => window.open('https://github.com/nigamarpit?tab=repositories', '_blank')}
+          >
+            <Github className="mr-2 h-5 w-5" />
+            View All on GitHub
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </FadeIn>
     </div>
   )
 }
