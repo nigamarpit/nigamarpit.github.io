@@ -1,9 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
-import { Button } from '~/components/ui/button'
-import { ExternalLink, Github } from 'lucide-react'
-import { FadeIn } from '~/components/animations/fade-in'
-import { StaggerContainer, StaggerItem } from '~/components/animations/stagger-container'
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsPage,
@@ -11,125 +6,88 @@ export const Route = createFileRoute('/projects')({
 
 const projects = [
   {
-    title: 'Restaurant Genie',
-    description: 'Voice Assistant for Finding Restaurants',
-    details:
-      'Voice-powered restaurant discovery system using natural language processing and speech recognition',
-    tech: ['C', 'NLP', 'Voice Recognition'],
-    stars: 1,
-    forks: 2,
+    name: 'restaurant-genie',
+    desc: 'Voice-powered restaurant assistant using NLP',
+    tech: ['C', 'NLP'],
+    status: 'archived',
   },
   {
-    title: 'Real-time Spatial System',
-    description: 'National Park Animal Tracking',
-    details:
-      'Real-time tracking system for wildlife in 2D space using Oracle Spatial database and JFrame',
-    tech: ['Oracle Spatial DB', 'Java', 'JFrame'],
-    period: 'Oct 2015 - Dec 2015',
+    name: 'spatial-system',
+    desc: 'Geospatial animal tracking and analysis',
+    tech: ['Oracle', 'Java'],
+    status: 'archived',
   },
   {
-    title: 'NLP Solutions',
-    description: 'Natural Language Processing Programs',
-    details: 'Collection of programs for text processing, sentiment analysis, and language understanding',
-    tech: ['Python', 'NLP', 'Text Processing'],
+    name: 'nlp-solutions',
+    desc: 'Text processing and analysis toolkit',
+    tech: ['Python', 'NLP'],
+    status: 'archived',
   },
   {
-    title: 'Santander Customer Satisfaction',
-    description: 'Machine Learning Solution',
-    details: 'Kaggle competition solution for predicting customer satisfaction using ML algorithms',
-    tech: ['Python', 'Scikit-learn', 'Pandas'],
+    name: 'ml-algorithms',
+    desc: 'ML algorithms implemented from scratch',
+    tech: ['MATLAB', 'Python'],
+    status: 'archived',
   },
   {
-    title: 'ML Algorithms',
-    description: 'Machine Learning Implementations',
-    details: 'Common machine learning algorithms implemented from scratch',
-    tech: ['MATLAB', 'Java', 'Algorithms'],
-  },
-  {
-    title: 'Fingerprint Recognition System',
-    description: 'Undergraduate Final Project',
-    details: 'Biometric authentication system using fingerprint pattern matching and image processing',
-    tech: ['MATLAB', 'Image Processing', 'Pattern Recognition'],
+    name: 'fingerprint-system',
+    desc: 'Biometric authentication system',
+    tech: ['MATLAB'],
     stars: 5,
-    forks: 2,
+    status: 'archived',
   },
   {
-    title: 'Client-Server Architecture',
-    description: 'Distributed Systems Project',
-    details: 'Implementation of client-server communication patterns and distributed computing concepts',
-    tech: ['Distributed Systems', 'Networking', 'Protocols'],
-    period: 'Oct 2012 - Present',
-  },
-  {
-    title: 'Project Euler Solutions',
-    description: 'Mathematical Programming Challenges',
-    details: 'Solutions to computational mathematics and algorithmic problems',
-    tech: ['Jupyter Notebook', 'Python', 'Algorithms'],
+    name: 'project-euler',
+    desc: 'Mathematical challenge solutions',
+    tech: ['Python'],
+    status: 'active',
   },
 ]
 
 function ProjectsPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
-      <FadeIn>
-        <div className="mb-12">
-          <h1 className="text-5xl font-bold mb-4 text-gray-900 dark:text-gray-50">Projects</h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300">
-            A collection of my work in ML, NLP, distributed systems, and more
-          </p>
-        </div>
-      </FadeIn>
+    <div>
+      <p><span className="text-[#33ff33]">arpit@portfolio:~$</span> <span className="text-[#888]">ls -la projects/</span></p>
+      <pre className="mt-2 text-xs">
+<span className="text-[#666]">total {projects.length}</span>
+{projects.map((p) => (
+  <span key={p.name} className="block">
+    <span className="text-[#666]">drwxr-xr-x </span>
+    <span className="text-[#5fafff]">{p.name}</span>
+    <span className={p.status === 'active' ? 'text-[#98c379]' : 'text-[#666]'}>
+      {' '}[{p.status}]
+    </span>
+  </span>
+))}
+      </pre>
 
-      <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <StaggerItem key={project.title}>
-            <Card className="hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
-              <CardHeader>
-                <CardTitle className="text-lg">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col justify-between">
-                <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{project.details}</p>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  {project.period && (
-                    <p className="text-xs text-gray-500 dark:text-gray-500">{project.period}</p>
-                  )}
-                  {project.stars !== undefined && (
-                    <p className="text-xs text-gray-500 dark:text-gray-500">
-                      ⭐ {project.stars} stars · 🍴 {project.forks} forks
-                    </p>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </StaggerItem>
+      <p className="mt-6"><span className="text-[#33ff33]">arpit@portfolio:~$</span> <span className="text-[#888]">cat projects/README.md</span></p>
+      <div className="mt-2 space-y-4">
+        {projects.map((p) => (
+          <div key={p.name} className="border-l-2 border-[#333] pl-3">
+            <p>
+              <span className="text-[#c678dd]">## </span>
+              <span className="text-[#e5c07b]">{p.name}</span>
+              {'stars' in p && <span className="text-[#e5c07b] ml-2">{'⭐'.repeat(p.stars ?? 0)}</span>}
+            </p>
+            <p className="text-[#ccc] text-xs">{p.desc}</p>
+            <p className="text-xs mt-0.5">
+              {p.tech.map((t) => (
+                <span key={t} className="text-[#56b6c2] mr-2">#{t.toLowerCase()}</span>
+              ))}
+            </p>
+          </div>
         ))}
-      </StaggerContainer>
+      </div>
 
-      <FadeIn delay={0.3}>
-        <div className="mt-12 text-center">
-          <Button
-            size="lg"
-            onClick={() => window.open('https://github.com/nigamarpit?tab=repositories', '_blank')}
-          >
-            <Github className="mr-2 h-5 w-5" />
-            View All on GitHub
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </FadeIn>
+      <p className="mt-6"><span className="text-[#33ff33]">arpit@portfolio:~$</span> <span className="text-[#888]">echo $GITHUB</span></p>
+      <p className="mt-1">
+        → <a href="https://github.com/nigamarpit?tab=repositories" target="_blank" rel="noopener noreferrer">
+          github.com/nigamarpit
+        </a>
+      </p>
+
+      <p className="mt-6"><span className="text-[#33ff33]">arpit@portfolio:~$</span> <span className="cursor">█</span></p>
     </div>
   )
 }
