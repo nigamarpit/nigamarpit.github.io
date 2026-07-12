@@ -44,7 +44,7 @@ src/
 **Key Technologies:**
 - React 19
 - TypeScript
-- Vite 7
+- Vite 8
 - Tailwind CSS v4
 - TanStack Router
 - Lucide Icons
